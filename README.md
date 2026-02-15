@@ -1,190 +1,202 @@
-# Back_end_project
-<h1>🏥 Hospital Equipment Management System (Hospital EMS)</h1>
+<h1 align="center">🚀 Admin Controlled Employee Management System</h1>
 
-<p>
-A full-stack <b>MERN-based Hospital Equipment Management System</b> designed to manage hospital users,
-roles, and medical equipment efficiently with secure authentication and role-based access control.
+<p align="center">
+A Full Stack Employee Management System with Role-Based Authentication<br>
+Built using MERN Stack (MongoDB, Express, React, Node.js)
 </p>
 
+<hr>
+
+<h2>📌 Project Overview</h2>
+
 <p>
-This project supports <b>Admin</b> and <b>Employee</b> roles with different permissions and provides
-a clean dashboard with charts for equipment analytics.
+This project is a role-based Employee Management System where:
 </p>
 
-<hr />
-
-<h2>🚀 Features</h2>
-
-<h3>🔐 Authentication & Security</h3>
 <ul>
-  <li>Email-based login with OTP verification</li>
-  <li>JWT authentication using HTTP-only cookies</li>
-  <li>Secure session handling</li>
-  <li>Role-based authorization (Admin / Employee)</li>
+  <li><strong>Admin</strong> has full control over employees, departments, and leave management.</li>
+  <li><strong>Employee</strong> can manage their profile and apply for leave.</li>
 </ul>
 
-<h3>👥 User Management (Admin Only)</h3>
-<ul>
-  <li>View all users</li>
-  <li>Role-based access control</li>
-  <li>Employees cannot access admin routes (backend protected)</li>
-</ul>
+<hr>
 
-<h3>🏥 Equipment Management</h3>
-<ul>
-  <li>View medical equipment list</li>
-  <li>Admin can add new equipment</li>
-  <li>Employees have read-only access</li>
-  <li>Equipment availability & quantity tracking</li>
-</ul>
-
-<h3>📊 Dashboard & Analytics</h3>
-<ul>
-  <li>Dashboard with real-time equipment data</li>
-  <li>Pie chart & Bar chart visualization</li>
-  <li>Data fetched dynamically from backend</li>
-</ul>
-
-<h3>🧭 UI & Layout</h3>
-<ul>
-  <li>Sidebar navigation (role-based)</li>
-  <li>Dashboard layout</li>
-  <li>Profile page with email locked (non-editable)</li>
-  <li>Clean and extendable React architecture</li>
-</ul>
-
-<hr />
-
-<h2>🛠️ Tech Stack</h2>
+<h2>🛠 Tech Stack</h2>
 
 <h3>Frontend</h3>
 <ul>
   <li>React (Vite)</li>
   <li>React Router DOM</li>
   <li>Axios</li>
-  <li>Context API</li>
-  <li>Recharts</li>
+  <li>Basic CSS</li>
 </ul>
 
 <h3>Backend</h3>
 <ul>
   <li>Node.js</li>
   <li>Express.js</li>
-  <li>MongoDB (Mongoose)</li>
+  <li>MongoDB Atlas</li>
+  <li>Mongoose</li>
   <li>JWT Authentication</li>
-  <li>Cookie-parser</li>
-  <li>CORS</li>
+  <li>Nodemailer (OTP Email)</li>
+  <li>bcryptjs (Password Hashing)</li>
 </ul>
 
-<hr />
+<hr>
 
-<h2>📁 Project Structure</h2>
+<h2>🔐 Authentication Features</h2>
+
+<ul>
+  <li>✔ User Registration</li>
+  <li>✔ Email OTP Verification</li>
+  <li>✔ Login with JWT</li>
+  <li>✔ Role-Based Access (Admin / Employee)</li>
+  <li>✔ Forgot Password</li>
+  <li>✔ Reset Password via Email</li>
+  <li>✔ Protected Routes</li>
+  <li>✔ Secure HttpOnly Cookies</li>
+</ul>
+
+<hr>
+
+<h2>👑 Admin Features</h2>
+
+<ul>
+  <li>Dashboard Overview</li>
+  <li>Add / Update / Delete Employees</li>
+  <li>View All Employees</li>
+  <li>Search & Filter Employees</li>
+  <li>Department Management</li>
+  <li>Approve / Reject Leave Requests</li>
+</ul>
+
+<hr>
+
+<h2>👨‍💻 Employee Features</h2>
+
+<ul>
+  <li>View Dashboard</li>
+  <li>Update Profile</li>
+  <li>Apply for Leave</li>
+  <li>View Leave History</li>
+  <li>Change Password</li>
+</ul>
+
+<hr>
+
+<h2>📂 Project Structure</h2>
 
 <pre>
-hospital-ems/
+Backend/
 │
-├── backend/
-│   ├── server.js
-│   ├── package.json
-│   ├── .env.example
-│   ├── config/
-│   ├── models/
-│   ├── controllers/
+├── config/
+├── controllers/
+├── middleware/
+├── models/
+├── routes/
+├── utils/
+├── server.js
+└── package.json
+
+Frontend/
+│
+├── src/
+│   ├── pages/
 │   ├── routes/
-│   ├── middleware/
-│   ├── utils/
-│   └── uploads/
-│
-└── frontend/
-    ├── package.json
-    ├── vite.config.js
-    ├── index.html
-    └── src/
-        ├── api/
-        ├── context/
-        ├── layouts/
-        ├── components/
-        ├── pages/
-        ├── App.jsx
-        └── main.jsx
+│   ├── services/
+│   ├── App.jsx
+│   └── main.jsx
+└── package.json
 </pre>
 
-<hr />
+<hr>
 
-<h2>⚙️ Environment Variables</h2>
-
-<p>Create a <code>.env</code> file inside the <b>backend</b> folder:</p>
+<h2>⚙️ Environment Variables (.env)</h2>
 
 <pre>
+PORT=5000
 MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
+JWT_SECRET=your_secret_key
+JWT_REFRESH_SECRET=your_refresh_secret
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_app_password
+FRONTEND_URL=http://localhost:5173
 </pre>
 
-<hr />
+<hr>
 
-<h2>▶️ How to Run the Project</h2>
+<h2>🚀 Installation Guide</h2>
 
-<h3>1️⃣ Backend Setup</h3>
+<h3>1️⃣ Clone Repository</h3>
+
+<pre>
+git clone https://github.com/your-username/employee-management.git
+</pre>
+
+<h3>2️⃣ Backend Setup</h3>
+
 <pre>
 cd backend
 npm install
-cp .env.example .env
 npm run dev
 </pre>
 
-<p>Backend runs on: <b>http://localhost:5000</b></p>
+<h3>3️⃣ Frontend Setup</h3>
 
-<h3>2️⃣ Frontend Setup</h3>
 <pre>
 cd frontend
 npm install
 npm run dev
 </pre>
 
-<p>Frontend runs on: <b>http://localhost:5173</b></p>
+<hr>
 
-<hr />
+<h2>🔄 Authentication Flow</h2>
 
-<h2>🔑 Login Flow</h2>
 <ol>
-  <li>Enter registered email</li>
-  <li>OTP is generated (visible in backend console)</li>
-  <li>Enter OTP to verify</li>
-  <li>JWT token is stored in cookies</li>
-  <li>User is redirected to dashboard</li>
+  <li>User registers</li>
+  <li>OTP sent via email</li>
+  <li>User verifies OTP</li>
+  <li>JWT token generated on login</li>
+  <li>Role-based route protection applied</li>
 </ol>
 
-<hr />
+<hr>
 
-<h2>👤 Roles & Access</h2>
+<h2>🔐 Security Best Practices</h2>
 
-<table border="1" cellpadding="8">
-  <tr>
-    <th>Role</th>
-    <th>Access</th>
-  </tr>
-  <tr>
-    <td>Admin</td>
-    <td>Dashboard, Users, Equipment (CRUD), Profile</td>
-  </tr>
-  <tr>
-    <td>Employee</td>
-    <td>Dashboard, Equipment (View Only), Profile</td>
-  </tr>
-</table>
-
-<hr />
-
-<h2>📌 Future Enhancements</h2>
 <ul>
-  <li>Email OTP using Nodemailer</li>
-  <li>Profile image upload</li>
-  <li>Edit / Delete equipment</li>
-  <li>Advanced analytics</li>
-  <li>UI/UX improvements</li>
-  <li>Deployment (Render / Vercel)</li>
+  <li>Password hashing using bcrypt</li>
+  <li>JWT token expiration</li>
+  <li>Role-based authorization middleware</li>
+  <li>Email verification required</li>
+  <li>Environment variables for secrets</li>
+  <li>CORS configuration enabled</li>
 </ul>
 
-<hr />
+<hr>
 
-<p><b>✨ This project is a solid foundation for a real-world hospital management system and can be extended easily.</b></p>
+<h2>🌟 Future Improvements</h2>
+
+<ul>
+  <li>Pagination</li>
+  <li>Search & Advanced Filtering</li>
+  <li>Dashboard Charts</li>
+  <li>File Upload with Cloudinary</li>
+  <li>Audit Logs</li>
+  <li>Export Data to CSV</li>
+</ul>
+
+<hr>
+
+<h2 align="center">💡 Developed By</h2>
+
+<p align="center">
+<strong>SOUMYASHREE NAYAK</strong><br>
+Full Stack Developer
+</p>
+
+<hr>
+
+<p align="center">
+⭐ If you like this project, don't forget to give it a star!
+</p>
