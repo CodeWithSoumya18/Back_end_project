@@ -1,0 +1,42 @@
+.layout {
+  display: flex;
+}
+
+.content {
+  margin-left: 230px;
+  padding: 20px;
+  width: 100%;
+}
+
+.grid-3 {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  margin-top: 15px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+button {
+  padding: 8px 14px;
+  margin-top: 10px;
+}
+
+.danger {
+  background: red;
+  color: white;
+}
